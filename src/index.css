@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    /* Escritorio cálido de madera oscura / cuero debajo de la agenda */
+    background-color: #261e1b;
+    background-image: 
+      radial-gradient(circle at 50% 35%, rgba(76, 57, 46, 0.78) 0%, rgba(25, 19, 16, 0.98) 100%),
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 2px, transparent 2px, transparent 8px);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Textura realista de papel crema con sombra interior de encuadernación */
+.paper-sheet-left {
+  background-color: #FAF6EE;
+  background-image: 
+    linear-gradient(to right, rgba(210, 195, 175, 0.25) 0%, rgba(250, 246, 238, 0) 6%, rgba(250, 246, 238, 0) 88%, rgba(150, 132, 110, 0.42) 100%);
+  box-shadow: 
+    inset 2px 0 4px rgba(255, 255, 255, 0.8),
+    -4px 6px 18px rgba(0, 0, 0, 0.22);
+}
+
+.paper-sheet-right {
+  background-color: #FAF6EE;
+  background-image: 
+    linear-gradient(to left, rgba(210, 195, 175, 0.25) 0%, rgba(250, 246, 238, 0) 6%, rgba(250, 246, 238, 0) 88%, rgba(150, 132, 110, 0.42) 100%);
+  box-shadow: 
+    inset -2px 0 4px rgba(255, 255, 255, 0.8),
+    4px 6px 18px rgba(0, 0, 0, 0.22);
+}
+
+/* Renglones de hoja de agenda clásica */
+.paper-ruled-lines {
+  background-image: linear-gradient(to bottom, transparent 47px, #DFD6C7 48px);
+  background-size: 100% 48px;
+}
+
+/* Sombra realista de Post-it levantado por la esquina */
+.post-it-shadow {
+  box-shadow: 
+    2px 6px 14px rgba(45, 35, 20, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Cinta adhesiva translúcida (Washi Tape) */
+.washi-tape {
+  background: rgba(235, 218, 190, 0.65);
+  backdrop-filter: blur(1px);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border-left: 2px dashed rgba(180, 160, 130, 0.45);
+  border-right: 2px dashed rgba(180, 160, 130, 0.45);
+}
+
+/* Efecto de esquina de hoja doblada interactiva */
+.page-corner-curl {
+  background: linear-gradient(135deg, transparent 48%, #E6DEC8 50%, #FDFBF7 56%, #D5CBB8 100%);
+  box-shadow: -3px -3px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Efecto de grabado en oro (Gold Foil Emboss) para la portada */
+.gold-foil-text {
+  background: linear-gradient(135deg, #F9E498 0%, #D4AF37 35%, #FFF3B0 50%, #AA7C11 75%, #F3E5AB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.45));
+}
+
+.gold-foil-border {
+  border-color: #D4AF37;
+  box-shadow: inset 0 0 6px rgba(212, 175, 55, 0.35), 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Perspectiva 3D realista para las hojas que giran */
+.book-perspective {
+  perspective: 2600px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Animación de tachado con tinta */
+@keyframes inkStrike {
+  from {
+    stroke-dashoffset: 320;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-ink-strike {
+  stroke-dasharray: 320;
+  animation: inkStrike 0.42s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Scrollbar sutil estilo papel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(223, 214, 199, 0.3);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(168, 152, 130, 0.6);
+  border-radius: 9999px;
+}
